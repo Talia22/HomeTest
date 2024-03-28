@@ -199,7 +199,7 @@ module.exports = {
                 let dailyCounts = {};
                 
                 membersWithCovidLastMonth.forEach(member => {
-                    const start = new Date(member.covidInfo.positiveTestDate);
+                    const start = new Date(Math.max(new Date(member.covidInfo.positiveTestDate), monthAgo));
                     const end = member.covidInfo.recoveryDate ? new Date(member.covidInfo.recoveryDate) : today;
                     for (let day = new Date(start); day <= end; day.setDate(day.getDate() + 1)) {
                         const dateString = day.toISOString().slice(0, 10);
