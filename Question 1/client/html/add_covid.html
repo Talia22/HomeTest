@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title id=title> Covid Information Form </title>
+            <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+            <!-- load bootstrap via CDN -->
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+            <!-- load jquery via CDN -->
+            <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+            <script type="text/javascript" src="/js/covid_utils.js"></script>
+            <link rel = "stylesheet" href = "/css/index.css" /> <!-- the css link -->
+    </head>
+</head>
+<body class="main">
+    <div class="col-sm-6 col-sm-offset-3">
+        <h1 id="title">Add OR Update Covid Information</h1>
+        <form id="covid_form" name="covid_form" method="POST">
+
+            <div class="form-group">
+                <label for="vaccinated">Vaccinated</label>
+                <select class="form-control" name="vaccinated" id="vaccinated" required>
+                    <option value="">Select</option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+            
+            <!-- Dose Selection - Initially hidden -->
+            <div class="form-group" id="doseSelection" style="display: none;">
+                <label for="dose">Dose</label>
+                <select class="form-control" name="dose" id="dose">
+                    <option value="">Select Dose</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+            
+            
+            <div id="vaccinationRecord" style="display: none;">
+                <!-- Dynamic fields will be added here -->
+            </div>
+ 
+            <div class="form-group">
+                <label for="wasSick">Was Sick</label>
+                <select class="form-control" name="wasSick" id="wasSick" required>
+                    <option value="">Select</option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+            <fieldset id="sicknessPeriod" style="display: none;">
+                <legend>Sickness Period</legend>
+                <div class="form-group">
+                    <label for="positiveTestDate">Positive Test Date</label>
+                    <input type="date" class="form-control" name="positiveTestDate" id="positiveTestDate" placeholder="Positive Test Date">
+                </div>
+                <div class="form-group">
+                    <label for="recoveryDate">Recovery Date</label>
+                    <input type="date" class="form-control" name="recoveryDate" id="recoveryDate" placeholder="Recovery date">
+                </div>
+            </fieldset>
+
+            <button type="submit" class="button">Submit</button>   
+            <button class="button" onclick="cancel()">Cancel</button>    
+        </form>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,65 @@
+<!-- index.html -->
+<!doctype html>
+<html>
+<head>
+    <title id=title>Add Member</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <!-- load bootstrap via CDN -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    <!-- load jquery via CDN -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/js/Member_utils.js"></script>
+    <link rel = "stylesheet" href = "/css/index.css" /> <!-- the css link -->
+
+</head>
+<body class="main">
+    <div class="col-sm-6 col-sm-offset-3">
+        <h1 id="title">Add OR Update Member</h1>
+        <form id="member_form" name="member_form" method="POST">
+
+            <div id="name-group" class="form-group">
+                <label for="id_field">ID</label>
+                <input type="text" class="form-control" name="id_field" id="id_field" placeholder="ID here" required>
+            </div>
+
+            <div id="name-group" class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="First and Last name here" required>
+            </div>            
+
+            <div id="name-group" class="form-group">
+                <label for="Date_of_birth">Date of Birth</label>
+                <input type="date" class="form-control" name="Date_of_birth" id="Date_of_birth" placeholder="Date of birth here" required>
+            </div>
+
+            <div id="name-group" class="form-group">
+                <label for="city">City</label>
+                <input type="text" class="form-control" name="city" id="city" placeholder="City" required>
+            </div>
+
+            <div id="name-group" class="form-group">
+                <label for="street">Street</label>
+                <input type="text" class="form-control" name="street" id="street" placeholder="Street" required>
+            </div>
+
+            <div id="name-group" class="form-group">
+                <label for="number">Number</label>
+                <input type="text" class="form-control" name="number" id="number" placeholder="Number" required pattern="\d*">
+            </div>
+            
+            <div id="name-group" class="form-group">
+                <label for="cellphone">Cellphone</label>
+                <input type="tel" class="form-control" name="cellphone" id="cellphone" placeholder="Cellphone Number" required pattern="\d{10}">
+            </div>
+            
+            <div id="name-group" class="form-group">
+                <label for="homePhone">Home Phone</label>
+                <input type="tel" class="form-control" name="homePhone" id="homePhone" placeholder="Home Phone Number">
+            </div>
+            
+        </form>
+        <button class="button" onclick="submit()">Submit</button>   
+        <button class="button" onclick="cancel()">Cancel</button>   
+    </div>
+</body>
+</html>
